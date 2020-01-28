@@ -1,0 +1,34 @@
+<script>
+const playerSelection = 'rock';
+
+function computerPlay() {
+    let randomInt = Math.floor(Math.random() * 100);
+    if (randomInt <= 33) {
+        computerPlay = 'Rock';
+    } else if  (randomInt <= 66) { 
+        computerPlay = 'Paper';
+    } else {
+        computerPlay = 'Scissors';
+    }
+}
+
+function playRound(playerSelection, computerSelection) {
+    
+    if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
+        return "It's a tie, nobody wins this round!";
+    } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'Paper') {
+        return 'You loose, Paper beats Rock!';
+    } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'Scissors') {
+        return 'You win, Rock beats Scissors!';
+    } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'Rock') {
+        return 'You win, Paper beats Rock!';
+    } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'Scissors') {
+        return 'You loose, Scissors beat Paper!';
+    } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'Paper') {
+        return 'You win, Scissors beat Paper!';
+    } else {
+        return 'You loose, Rock beats Scissors!';
+    }
+}​
+
+</script>
