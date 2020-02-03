@@ -1,34 +1,48 @@
 <script>
-const playerSelection = 'rock';
+const computerSelection = computerPlay();
 
 function computerPlay() {
     let randomInt = Math.floor(Math.random() * 100);
     if (randomInt <= 33) {
-        computerPlay = 'Rock';
+        return 'Rock';
     } else if  (randomInt <= 66) { 
-        computerPlay = 'Paper';
+        return 'Paper';
     } else {
-        computerPlay = 'Scissors';
+        return 'Scissors';
     }
 }
 
 function playRound(playerSelection, computerSelection) {
-    
-    if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
+    if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         return "It's a tie, nobody wins this round!";
-    } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'Paper') {
+    } else if (playerSelection.toLowerCase() === 'rock' && computerSelection == 'Paper') {
         return 'You loose, Paper beats Rock!';
-    } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'Scissors') {
+    } else if (playerSelection.toLowerCase() === 'rock' && computerSelection == 'Scissors') {
         return 'You win, Rock beats Scissors!';
-    } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'Rock') {
+    } else if (playerSelection.toLowerCase() === 'paper' && computerSelection == 'Rock') {
         return 'You win, Paper beats Rock!';
-    } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'Scissors') {
+    } else if (playerSelection.toLowerCase() === 'paper' && computerSelection == 'Scissors') {
         return 'You loose, Scissors beat Paper!';
-    } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'Paper') {
+    } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection == 'Paper') {
         return 'You win, Scissors beat Paper!';
-    } else {
+    } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection == 'Rock') {
         return 'You loose, Rock beats Scissors!';
+    } else { 
+        return 'You need to pick one to play!';
     }
 }​
 
+function game(){
+    // kollar vilken runda den är på
+    // spelaren väljer vilken 
+    console.log(playRound(playerSelection,computerSelection)); // kör play round en gång och console loggar resultatet
+    //lägger till poäng 
+    //om på sista rundan - visa poäng
+    //annars - kör loop igen
+} // avslutar game()
+  
+
+playerSelection
 </script>
+
+
