@@ -1,5 +1,6 @@
 <script>
 const computerSelection = computerPlay();
+let playerSelection;
 
 function computerPlay() {
     let randomInt = Math.floor(Math.random() * 100);
@@ -33,16 +34,44 @@ function playRound(playerSelection, computerSelection) {
 }​
 
 function game(){
-    // kollar vilken runda den är på
-    // spelaren väljer vilken 
-    console.log(playRound(playerSelection,computerSelection)); // kör play round en gång och console loggar resultatet
-    //lägger till poäng 
-    //om på sista rundan - visa poäng
-    //annars - kör loop igen
-} // avslutar game()
+    let pointsPlayer = 0;
+    let pointsComputer = 0;
+    
+    playerSelection = prompt('Rock, Paper or Scissors? Pick one!');  
+    console.log(playRound(playerSelection,computerSelection));       
+    
+    if (winnerCheck.indexOf('win') = -1) {       
+        if (winnerCheck.indexOf('loose') =-1) {  
+            return pointsComputer += 0;        
+        } else {                     
+            return pointsComputer += 1;        
+        }
+    } else {
+            return pointsPlayer +=1;           
+    }
+    
+    playerSelection = prompt('Rock, Paper or Scissors? Pick one!');  
+    console.log(playRound(playerSelection,computerSelection));       
+    
+    if (winnerCheck.indexOf('win') = -1) {       
+        if (winnerCheck.indexOf('loose') =-1) {  
+            return pointsComputer += 0;        
+        } else {                     
+            return pointsComputer += 1;      
+        }
+    } else {
+            return pointsPlayer +=1;       
+    }
+    
+    if (pointsComputer < pointsPlayer) {   
+        console.log('You win!');
+    } else {
+        console.log('You loose, Computer wins!');
+    }
+
+} 
   
 
-playerSelection
 </script>
 
 
